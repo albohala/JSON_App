@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">JSON_App</string>
+    <string-array name="currency">
+        <item>USD</item>
+        <item>SAR</item>
+        <item>INR</item>
+        <item>AUD</item>
+        <item>JPY</item>
+    </string-array>
+</resources>
