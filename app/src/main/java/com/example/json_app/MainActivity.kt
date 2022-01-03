@@ -53,21 +53,21 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         apiInterface?.getCurrency()?.enqueue(object: Callback<Currency> {
             override fun onResponse(call: Call<Currency>, response: Response<Currency>) {
                 try {
-//                    val responseBody = response.body()!!
-//                    val date = responseBody.date
-//                    val euroValue = responseBody.currencyItems
-//                    Log.d("MAIN", "onResponse: I am a response ${date}")
-//                    Log.d("MAIN", "onResponse: I am a response ${euroValue.usd}")
-//
-//                    tvDate.text = "Date: $date"
+                    val responseBody = response.body()!!
+                    val date = responseBody.date
+                    val euroValue = responseBody.eur
+                    Log.d("MAIN", "onResponse: I am a response ${date}")
+                    Log.d("MAIN", "onResponse: I am a response ${euroValue.usd}")
 
-//                    when (currentCurrency) {
-//                        "USD" -> tvResult.text = "result: ${euroValue.usd.toString()}"
-//                        "SAR" -> tvResult.text = "result: ${euroValue.sar.toString()}"
-//                        "INR" -> tvResult.text = "result: ${euroValue.inr.toString()}"
-//                        "AUD" -> tvResult.text = "result: ${euroValue.aud.toString()}"
-//                        "JPY" -> tvResult.text = "result: ${euroValue.jpy.toString()}"
-//                    }
+                    tvDate.text = "Date: $date"
+
+                    when (currentCurrency) {
+                        "USD" -> tvResult.text = "result: ${euroValue.usd.toString()}"
+                        "SAR" -> tvResult.text = "result: ${euroValue.sar.toString()}"
+                        "INR" -> tvResult.text = "result: ${euroValue.inr.toString()}"
+                        "AUD" -> tvResult.text = "result: ${euroValue.aud.toString()}"
+                        "JPY" -> tvResult.text = "result: ${euroValue.jpy.toString()}"
+                    }
                 } catch (e: Exception) {
                     Log.d("MAIN01", "ISSUE: $e")
                 }
